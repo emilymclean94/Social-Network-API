@@ -10,10 +10,15 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            //get: Function to format timestamp
+            //! get: Function to format timestamp
         },
-        username: [userSchema],
-        //! Not sure if correct - think I need to use a type/ref array thing
+         //! Not sure if correct
+        username: [
+            {
+                type: Schema.Types.String,
+                ref: 'User'
+            },
+        ],
         reactions: [reactionSchema],
     }
 )
@@ -22,3 +27,28 @@ const thoughtSchema = new Schema(
 
 
 // TODO: reactionSchema = subdocument
+
+const reactionSchema = new Schema(
+    {
+        reactionId: {
+            type: ObjectId,
+            default: new ObjectId, //! check this
+        },
+        reactionBody: {
+            type: String,
+            required: true,
+            maxlength: 280,
+        },
+        username: [
+            {
+                type: Schema.Types.String,
+                ref: 'User'
+            },
+        ],
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            //! get: Function to format timestamp
+        }
+    }
+)
