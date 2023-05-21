@@ -1,5 +1,7 @@
 const router = require('express').Router();
 
+//! All associated functions listed in the curly brackets
+const { } = require('../../controllers/userController');
 
 //* for the api/users
 

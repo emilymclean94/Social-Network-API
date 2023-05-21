@@ -1,5 +1,8 @@
 const router = require('express').Router();
 
+//! All associated functions listed in the curly brackets
+const { } = require('../../controllers/thoughtController');
+
 //? Get all thoughts
 
 //? Get a single thought by ID
