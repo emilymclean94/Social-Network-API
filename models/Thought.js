@@ -1,3 +1,5 @@
+const { Schema, model } = require('mongoose');
+const userSchema = require('./User');
 
 const thoughtSchema = new Schema(
     {
@@ -49,6 +51,10 @@ const reactionSchema = new Schema(
             type: Date,
             default: Date.now,
             //! get: Function to format timestamp
-        }
+        },
     }
-)
+);
+
+const Thought = model('thought', thoughtSchema);
+
+module.exports = Thought;

@@ -22,11 +22,11 @@ const userSchema = new Schema(
             {
                 type: Schema.Types.ObjectId,
                 ref: 'User' 
-            }
-        ]
+            },
+        ],
     }
 );
 
 const User = model('user', userSchema);
 
-module.exports = userSchema;
+module.exports = User;
