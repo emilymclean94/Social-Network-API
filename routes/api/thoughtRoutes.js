@@ -12,3 +12,5 @@ const { } = require('../../controllers/thoughtController');
 //? Put to update a thought by id
 
 //? Delete to remove a thought by id
+
+module.exports = router;
