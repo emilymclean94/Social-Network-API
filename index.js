@@ -9,6 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
 
+// If error in db connection, logs error
+db.on('error', (error) => console.error(error))
+// If connected to db, log message
 db.once('open', () => {
     app.listen(PORT, () => {
       console.log(`API server for ${activity} running on port ${PORT}!`);
