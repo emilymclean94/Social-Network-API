@@ -1,5 +1,4 @@
-const { ObjectId } = require('mongoose').Types;
-const { User, Thought} = require('../models');
+const { User, Thought } = require('../models');
 
 //All functions for user routes
 module.exports = {
@@ -21,14 +20,10 @@ async getSingleUser(req, res) {
         .select('-__v');
 
       if (!user) {
-        return res.status(404).json({ message: 'No course with that ID' });
+        return res.status(404).json({ message: 'No user with that ID' });
       }
 
-      res.json({
-        user,
-        thought: await thought(req.params.thoughtId),
-        //! also need to return friends and id - not sure how
-      });
+      res.json({user});
     } catch (err) {
       res.status(500).json(err);
     }
@@ -109,7 +104,7 @@ async createUser(req, res) {
       if (!user) {
         return res
           .status(404)
-          .json({ message: 'No user found with that ID :(' });
+          .json({ message: 'No user found with that ID' });
       }
 
       res.json(user);
