@@ -1,6 +1,9 @@
 const { Schema, model } = require('mongoose');
 const thoughtSchema = require('./Thought');
 
+//! Not sure if thoughts and friends are correct
+
+
 // Schema to create user model
 const userSchema = new Schema(
     {
@@ -8,15 +11,26 @@ const userSchema = new Schema(
             type: String,
             unique: true,
             require: true,
-            trimmed: true, //!Check the syntax for this
+            trim: true, //*Changed from trimmed to trim - does it work?
         },
         email: {
             type: String,
             unique: true,
             required: true,
-            //! matching validation for email address
+            //* matching validation for email address - used mongoose docs for custom validators
+            validate: {
+                validator: function(v) {
+                    return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(v);
+                },
+                message: props => '${props.value} is not a valid email'
+            }
         },
-        thoughts: [thoughtSchema], //! references the thought schema in the Thought model
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought'
+            }
+        ], 
         friends: [
             //* This is a self reference
             {
