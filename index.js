@@ -14,6 +14,7 @@ db.on('error', (error) => console.error(error))
 // If connected to db, log message
 db.once('open', () => {
     app.listen(PORT, () => {
-      console.log(`API server for ${activity} running on port ${PORT}!`);
+      console.log(`API server running on port ${PORT}!`);
+      console.log('Mongoose server connected');
     });
   });

@@ -1,5 +1,37 @@
 const { Schema, model } = require('mongoose');
-const userSchema = require('./User');
+// const userSchema = require('./User');
+
+const reactionSchema = new Schema(
+    {
+        reactionId: {
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(), //! check this
+        },
+        reactionBody: {
+            type: String,
+            required: true,
+            maxlength: 280,
+        },
+        username: [
+            {
+                type: Schema.Types.String,
+                ref: 'User'
+            },
+        ],
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            //! get: Function to format timestamp
+            get: (date) => {
+                if (date) return date.toISOString().split("T")[0];
+            },
+        },
+    },
+    {
+        timestamps: true,
+        toJSON: { getters: true },
+    }
+);
 
 const thoughtSchema = new Schema(
     {
@@ -42,38 +74,6 @@ thoughtSchema
 
 
 // TODO: reactionSchema = subdocument
-
-const reactionSchema = new Schema(
-    {
-        reactionId: {
-            type: ObjectId,
-            default: new ObjectId, //! check this
-        },
-        reactionBody: {
-            type: String,
-            required: true,
-            maxlength: 280,
-        },
-        username: [
-            {
-                type: Schema.Types.String,
-                ref: 'User'
-            },
-        ],
-        createdAt: {
-            type: Date,
-            default: Date.now,
-            //! get: Function to format timestamp
-            get: (date) => {
-                if (date) return date.toISOString().split("T")[0];
-            },
-        },
-    },
-    {
-        timestamps: true,
-        toJSON: { getters: true },
-    }
-);
 
 const Thought = model('thought', thoughtSchema);
 
