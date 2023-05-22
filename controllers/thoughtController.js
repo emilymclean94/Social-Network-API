@@ -41,4 +41,20 @@ async getThought(req, res) {
     }
   },
 
+  // Delete thought
+    async deleteThought(req, res) {
+        try {
+          const thought = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
+    
+          if (!thought) {
+            res.status(404).json({ message: 'No thought with that ID' });
+          }
+    
+          await Student.deleteMany({ _id: { $in: thought.students } });
+          res.json({ message: 'thought and students deleted!' });
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      },
+
 };
