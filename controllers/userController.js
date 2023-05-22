@@ -33,6 +33,7 @@ async getSingleUser(req, res) {
       res.status(500).json(err);
     }
   },
+  
 // Post new user createUser()
 
 // Delete student deleteUser()
