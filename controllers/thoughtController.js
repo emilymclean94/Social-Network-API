@@ -29,4 +29,16 @@ async getThought(req, res) {
     }
   },
 
+  // Create thought
+  //! Need to push this to user's thoughts array field somehow
+  async createThought(req, res) {
+    try {
+      const thought = await Thought.create(req.body);
+      res.json(thought);
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+  },
+
 };
