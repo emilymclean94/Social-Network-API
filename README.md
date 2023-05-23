@@ -3,7 +3,7 @@ An API where users can connect with friends and strangers through posts, comment
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-For a video demonstration ![click here](#).
+For a video demonstration [click here](https://drive.google.com/file/d/1Ny2EC9113AbWfKGiiTN_u4cSBWB8np7e/view).
 
 ## Table of Contents
 
@@ -61,8 +61,8 @@ mod7ex on Stack Overflow for the date timestamp code snippet, AskBSC Learning As
 
 ## License
 
-![Click here](https://opensource.org/licenses/MIT) for more information on the license used.
+[Click here](https://opensource.org/licenses/MIT) for more information on the license used.
 
 ## Questions
 
-![Click Here](https://github.com/emilymclean94) to view my GitHub profile.
+[Click Here](https://github.com/emilymclean94) to view my GitHub profile.
