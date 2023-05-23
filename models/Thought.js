@@ -12,16 +12,13 @@ const reactionSchema = new Schema(
             required: true,
             maxlength: 280,
         },
-        username: [
-            {
-                type: Schema.Types.String,
-                ref: 'User'
-            },
-        ],
+        username: {
+            type: String,
+            required: true,
+        },
         createdAt: {
             type: Date,
             default: Date.now,
-            //! get: Function to format timestamp
             get: (date) => {
                 if (date) return date.toISOString().split("T")[0];
             },
@@ -44,18 +41,15 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            //! get: Function to format timestamp - from stack overflow, not sure if right
             get: (date) => {
                 if (date) return date.toISOString().split("T")[0];
             },
         },
         //! Not sure if correct
-        username: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'User'
-            },
-        ],
+        username: {
+            type: String,
+            required: true,
+        },
         reactions: [reactionSchema],
     },
     {
@@ -64,16 +58,13 @@ const thoughtSchema = new Schema(
     }
 )
 
-// TODO: Virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
+
 //! Not sure if this is doing what I need it to do
 thoughtSchema
     .virtual('reactionCount')
     .get(function () {
         return this.reactions.length;
     });
-
-
-// TODO: reactionSchema = subdocument
 
 const Thought = model('thought', thoughtSchema);
 
