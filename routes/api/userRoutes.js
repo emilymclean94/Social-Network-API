@@ -25,7 +25,7 @@ router.route('/:userId')
 
 //? add and delete friends
 //! double check these with controllers
-router.route('/user/:userId/friends/:friendId')
+router.route('/:userId/friends/:friendId')
 .post(addFriend)
 .delete(removeFriend);
 
