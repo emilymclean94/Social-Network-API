@@ -3,6 +3,8 @@ An API where users can connect with friends and strangers through posts, comment
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+For a video demonstration ![click here](#).
+
 ## Table of Contents
 
 [Description](#description)
@@ -16,8 +18,6 @@ An API where users can connect with friends and strangers through posts, comment
 [Technologies-Used](#technologies-used)
 
 [Credits](#credits)
-
-[License](#license)
 
 [Questions](#questions)
 
@@ -39,14 +39,12 @@ To run this API locally:
 
 ## Usage
 
-Open the development platform of your choice and test the routes. Seeds are not provided in this code so you will need to use your own.
+Open the development platform of your choice and test the routes. Seeds are not provided in this code so you will need to create your own.
 
 ## Screenshots
 
-![Screenshot](public/images/Screenshot%20(119).png)
-![Screenshot](public/images/Screenshot%20(120).png)
-![Screenshot](public/images/Screenshot%20(121).png)
-![Screenshot](public/images/Screenshot%20(122).png)
+![Screenshot](./assets/images/social-screenshot-01.png)
+![Screenshot](./assets/images/social-screenshot-02.png)
 
 ## Technologies Used
 
@@ -63,8 +61,8 @@ mod7ex on Stack Overflow for the date timestamp code snippet, AskBSC Learning As
 
 ## License
 
-MIT
+![Click here](https://opensource.org/licenses/MIT) for more information on the license used.
 
 ## Questions
 
-![Click Here](https://github.com/emilymclean94) To view my GitHub profile.
+![Click Here](https://github.com/emilymclean94) to view my GitHub profile.
