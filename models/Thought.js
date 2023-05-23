@@ -45,7 +45,6 @@ const thoughtSchema = new Schema(
                 if (date) return date.toISOString().split("T")[0];
             },
         },
-        //! Not sure if correct
         username: {
             type: String,
             required: true,
